@@ -1,8 +1,8 @@
-import { IMenu } from "../interface/menu";
 import mongoose, { Schema } from "mongoose";
+import { IMenu } from "snapmeal-common";
 
 const menuSchema: Schema<IMenu> = new Schema({
-  canteen: {
+  canteenId: {
     type: String,
     required: true,
   },
@@ -18,9 +18,18 @@ const menuSchema: Schema<IMenu> = new Schema({
     type: Number,
     required: true,
   },
-  image: {
+  imageUrl: {
     type: String,
     required: true,
   },
+  timeUnit:{
+    type: String,
+    enum: ["minutes", "hours"],
+    required: true
+  },
+  time:{
+    type: Number,
+    required: true
+  }
 });
-export const menu = mongoose.model("menu", menuSchema);
+export const Menu = mongoose.model("menu", menuSchema);

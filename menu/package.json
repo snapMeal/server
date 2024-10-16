@@ -11,8 +11,8 @@
     "dependencies": {
         "express": "^4.21.1",
         "mongoose": "^8.7.1",
+        "snapmeal-common": "github:snapMeal/common#main",
         "zod": "^3.23.8"
-
     },
     "devDependencies": {
         "@eslint/js": "^9.12.0",

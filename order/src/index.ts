@@ -1,7 +1,7 @@
-import express from "express";
+import { app, logger } from "snapmeal-common";
 
-const app = express();
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+const port = process.env.PORT || 8006;
+
+app.listen(port, ()=>{
+    logger.log(`Order service is running on port ${port}`);
+})
